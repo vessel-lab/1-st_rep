@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Мини-игра</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 50px;
+            background: #f0f0f0;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            background: #4CAF50;
+            color: white;
+        }
+        #counter {
+            font-size: 48px;
+            margin: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎯 Кликер</h1>
+    <div id="counter">0</div>
+    <button onclick="clickCounter()">Кликни меня!</button>
+    <button onclick="resetCounter()">Сбросить</button>
+    <p id="message"></p>
+
+    <script>
+        let count = 0;
+        const counter = document.getElementById('counter');
+        const message = document.getElementById('message');
+
+        function clickCounter() {
+            count++;
+            counter.textContent = count;
+            
+            if (count === 10) message.textContent = '🎉 Отлично! Продолжай!';
+            if (count === 25) message.textContent = '🔥 Невероятно!';
+            if (count === 50) message.textContent = '🚀 Ты машина!';
+        }
+
+        function resetCounter() {
+            count = 0;
+            counter.textContent = '0';
+            message.textContent = '';
+        }
+    </script>
+</body>
+</html>
